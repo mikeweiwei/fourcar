@@ -10,7 +10,7 @@
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
-////
+///
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 int image_W = 640;
 int image_H = 480;
