@@ -308,7 +308,7 @@ UINT ImgAcqRunCQ(LPVOID pParam)
 				cvCvtColor(Car1_tempFrame1, Car1_currentFrame, CV_BGR2GRAY);
 
 				if (Car1_imageCount==0)
-					Car1_backgroundFrame = cvCloneImage(Car1_currentFrame);        //»ñÈ¡±³¾°Í¼Ïñ
+					Car1_backgroundFrame = cvCloneImage(Car1_currentFrame);         //»ñÈ¡±³¾°Í¼Ïñ
 
 				cvAbsDiff(Car1_currentFrame,Car1_backgroundFrame,Car1_diffFrame);
 				IplImage* Car1_ROIFrame = cvCloneImage(Car1_diffFrame);
