@@ -351,7 +351,7 @@ UINT ImgAcqRunCQ(LPVOID pParam)
 			{
 				IplImage* Car2_imageshow = cvCloneImage(Car2_tempFrame1);
 
-				cvSmooth(Car2_tempFrame1, Car2_tempFrame1, CV_GAUSSIAN, 7,7);
+				cvSmooth(Car2_tempFrame1, Car2_tempFrame1, CV_GAUSSIAN, 7,7);//Æ½»¬ÂË²¨
 				cvCvtColor(Car2_tempFrame1, Car2_currentFrame, CV_BGR2GRAY);
 
 				if (Car2_imageCount==0)
