@@ -408,9 +408,9 @@ UINT ImgAcqRunCQ(LPVOID pParam)
 				IplImage* Car3_ROIFrame = cvCloneImage(Car3_diffFrame);
 
 				cvSetImageROI(Car3_ROIFrame, cvRect(Car3_X1, Car3_Y1, Car3_X2-Car3_X1, Car3_Y2-Car3_Y1));//设置检测区域
-				cvMinMaxLoc(Car3_ROIFrame, &Car3_minVal, &Car3_maxVal, &Car3_minLoc, &Car3_maxLoc, NULL);
+				cvMinMaxLoc(Car3_ROIFrame, &Car3_minVal, &Car3_maxVal, &Car3_minLoc, &Car3_maxLoc, NULL); //找出图片或一组数据中最大值及最小值的数据
 
-				if (Car3_maxVal <thresoldvalue)
+				if (Car3_maxVal < thresoldvalue)
 				{
 					cvZero(Car3_ROIFrameBGRPrior);//将矩阵值都变为0
 					Car3_MOVEMENT=0;
@@ -418,7 +418,7 @@ UINT ImgAcqRunCQ(LPVOID pParam)
 				else
 				{
 					cvSetImageCOI(Car3_ROIFrameBGRPrior, 1);//检测区域
-					if( (Car3_MOVEMENT==0) && (cvCountNonZero(Car3_ROIFrameBGRPrior)==0) )
+					if( (Car3_MOVEMENT==0) && (cvCountNonZero(Car3_ROIFrameBGRPrior)==0) ) //输出非零点的个数，其矩阵须为单通道图像
 					{
 						cvZero(Car3_ROIFrameBGR);
 						Car3_MOVEMENT=1;
@@ -458,7 +458,7 @@ UINT ImgAcqRunCQ(LPVOID pParam)
 				cvSetImageROI(Car4_ROIFrame, cvRect(Car4_X1, Car4_Y1, Car4_X2-Car4_X1, Car4_Y2-Car4_Y1));
 				cvMinMaxLoc(Car4_ROIFrame, &Car4_minVal, &Car4_maxVal, &Car4_minLoc, &Car4_maxLoc, NULL);
 
-				if (Car4_maxVal <thresoldvalue)
+				if (Car4_maxVal < 100)
 				{
 					cvZero(Car4_ROIFrameBGRPrior);
 					Car4_MOVEMENT=0;
