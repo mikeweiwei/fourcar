@@ -455,7 +455,7 @@ UINT ImgAcqRunCQ(LPVOID pParam)
 				cvAbsDiff(Car4_currentFrame,Car4_backgroundFrame,Car4_diffFrame);
 				IplImage* Car4_ROIFrame = cvCloneImage(Car4_diffFrame);
 
-				cvSetImageROI(Car4_ROIFrame, cvRect(Car4_X1, Car4_Y1, Car4_X2-Car4_X1, Car4_Y2-Car4_Y1));
+				cvSetImageROI(Car4_ROIFrame, cvRect(Car4_X1, Car4_Y1, Car4_X2-Car4_X1, Car4_Y2-Car4_Y1));//w,h
 				cvMinMaxLoc(Car4_ROIFrame, &Car4_minVal, &Car4_maxVal, &Car4_minLoc, &Car4_maxLoc, NULL);
 
 				if (Car4_maxVal < 100)
